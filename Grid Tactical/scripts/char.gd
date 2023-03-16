@@ -1,7 +1,8 @@
-extends KinematicBody2D
+extends CharacterBody2D
 const SPEED = 960
 var motion = Vector2()
 
+var char = preload("res://scenes/character_body_2d.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,7 +12,13 @@ func cartes_to_iso(cartesian):
 	var pos = Vector2()
 	pos.x = (cartesian.x - cartesian.y)
 	pos.y = ((cartesian.x + cartesian.y)/2)
-	return Vector2(pos.x, pos.y)
+	return pos
+	
+func iso_to_cartes(iso):
+	var pos = Vector2()
+	pos.x = (iso.x + iso.y*2)/2
+	pos.y = ((-iso.x + pos.x))
+	return pos
 
 func _physics_process(delta):
 	var direction = Vector2()
@@ -30,9 +37,12 @@ func _physics_process(delta):
 		
 	motion = direction.normalized() * SPEED * delta
 	motion = cartes_to_iso(motion)
+	#motion = iso_to_cartes(motion)
 	
 	move_and_collide(motion)
 	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
+#func _input(event):
+#	if event.get_class() == "InputEventMouseButton":
+#
+#		print(get_local_mouse_position())
 #	pass

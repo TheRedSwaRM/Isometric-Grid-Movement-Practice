@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjbp8vlyusvgk"]
+
+[ext_resource type="Script" path="res://scripts/Grid.gd" id="1_7fka5"]
+
+[node name="TopDownGrid" type="Node2D"]
+
+[node name="Grid" type="TileMap" parent="."]
+format = 2
+script = ExtResource("1_7fka5")
