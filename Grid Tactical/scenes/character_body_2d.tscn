@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dah1td330tbjh"]
 
-[ext_resource type="Texture2D" uid="uid://da5tnoa2uaq23" path="res://icon.png" id="1_1xqhv"]
+[ext_resource type="Texture2D" uid="uid://ddm00cqvlimyb" path="res://assets/art/IsometricTRPGAssetPack_OutlinedEntities.png" id="1_8aebm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4b6ir"]
 size = Vector2(32, 32)
@@ -10,9 +10,14 @@ z_index = 5
 z_as_relative = false
 scale = Vector2(0.25, 0.25)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_1xqhv")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_4b6ir")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+scale = Vector2(2, 1.883)
+texture = ExtResource("1_8aebm")
+hframes = 4
+vframes = 33
+region_rect = Rect2(7, 7, 6, 8)

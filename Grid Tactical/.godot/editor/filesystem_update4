@@ -1,7 +1,5 @@
 res://default_env.tres
-res://scenes/main.tscn
-res://scripts/Grid.gd
-res://scenes/IsometricGrid.gd
-res://scenes/top_down_grid.tscn
 res://scenes/character_body_2d.tscn
-res://scenes/World.gd
+res://scripts/Grid.gd
+res://scenes/main.tscn
+res://scenes/top_down_grid.tscn
